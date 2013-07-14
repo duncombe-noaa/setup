@@ -4,6 +4,7 @@
 
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
+# installation of git-core is already done! Lose this?
 sudo apt-get install -y git-core
 curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 
@@ -36,6 +37,7 @@ if [ -d .emacs.d/ ]; then
 fi
 git clone https://github.com/duncombe/dotfiles.git
 # link dotfiles to dotted files in the home directory
+ln -sb dotfiles/vimrc .vimrc
 ln -sb dotfiles/screenrc .screenrc
 ln -sb dotfiles/bash_profile .bash_profile
 ln -sb dotfiles/bashrc .bashrc
