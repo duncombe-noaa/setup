@@ -24,7 +24,7 @@ sudo apt-get install -y rlwrap
 # Install emacs24
 # https://launchpad.net/~cassou/+archive/emacs
 sudo apt-add-repository -y ppa:cassou/emacs
-sudo apt-get update
+sudo apt-get -y update
 sudo apt-get install -y emacs24 emacs24-el emacs24-common-non-dfsg
 
 # git pull and install dotfiles as well
@@ -35,7 +35,9 @@ fi
 if [ -d .emacs.d/ ]; then
     mv .emacs.d .emacs.d~
 fi
+
 git clone https://github.com/duncombe/dotfiles.git
+
 # link dotfiles to dotted files in the home directory
 ln -sb dotfiles/vimrc .vimrc
 ln -sb dotfiles/screenrc .screenrc
@@ -43,4 +45,21 @@ ln -sb dotfiles/bash_profile .bash_profile
 ln -sb dotfiles/bashrc .bashrc
 ln -sb dotfiles/bashrc_custom .bashrc_custom
 ln -sf dotfiles/emacs.d .emacs.d
+
+# these are commands that are needed to run node.js on the remote host
+
+sudo apt-get -y update
+sudo apt-get -y install python-software-properties python g++ make
+sudo add-apt-repository -y ppa:chris-lea/node.js
+
+sudo apt-get -y update
+sudo apt-get -y install nodejs
+# Install some node.js libraries 
+npm install restler 
+npm install cheerio
+npm install commander
+
+# And get ready for heroku.
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
 
