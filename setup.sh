@@ -62,4 +62,6 @@ npm install commander
 # And get ready for heroku.
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
+# Also want to check xml files (install xmllint).
+sudo apt-get install libxml2-utils
 
