@@ -4,8 +4,7 @@
 
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
-# installation of git-core is already done! Lose this?
-sudo apt-get install -y git-core
+sudo apt-get install -y git
 curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 
 # Load nvm and install latest production node
@@ -25,7 +24,7 @@ sudo apt-get install -y rlwrap
 # https://launchpad.net/~cassou/+archive/emacs
 sudo apt-add-repository -y ppa:cassou/emacs
 sudo apt-get -y update
-sudo apt-get install -y emacs24 emacs24-el emacs24-common-non-dfsg
+sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 
 # git pull and install dotfiles as well
 cd $HOME
@@ -48,11 +47,11 @@ ln -sf dotfiles/emacs.d .emacs.d
 
 # these are commands that are needed to run node.js on the remote host
 
-sudo apt-get -y update
+sudo apt-get -qq update
 sudo apt-get -y install python-software-properties python g++ make
 sudo add-apt-repository -y ppa:chris-lea/node.js
 
-sudo apt-get -y update
+sudo apt-get -qq update
 sudo apt-get -y install nodejs
 # Install some node.js libraries 
 npm install restler 
