@@ -57,6 +57,8 @@ sudo apt-get -y install nodejs
 npm install restler 
 npm install cheerio
 npm install commander
+# npm install js-beautify 
+sudo apt-get install tidy
 
 # And get ready for heroku.
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
