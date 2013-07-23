@@ -20,11 +20,13 @@ npm install -g jshint
 # See: http://nodejs.org/api/repl.html#repl_repl
 sudo apt-get install -y rlwrap
 
+if false; then 
 # Install emacs24
 # https://launchpad.net/~cassou/+archive/emacs
 sudo apt-add-repository -y ppa:cassou/emacs
 sudo apt-get -y update
 sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
+fi
 
 # git pull and install dotfiles as well
 cd $HOME
@@ -65,5 +67,6 @@ sudo apt-get install tidy
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
 # Also want to check xml files (install xmllint).
-sudo apt-get install libxml2-utils
+sudo apt-get -y install libxml2-utils
+
 
