@@ -35,7 +35,8 @@ if [ -d .emacs.d/ ]; then
     mv .emacs.d .emacs.d~
 fi
 
-git clone https://github.com/duncombe/dotfiles.git
+# git clone https://github.com/duncombe/dotfiles.git
+git clone github:duncombe/dotfiles.git
 
 # link dotfiles to dotted files in the home directory
 ln -sb dotfiles/vimrc .vimrc
